@@ -19,7 +19,7 @@ fn benchmark_print() {
             println!("{:?}",x_pos);
         }else {
             out_abs.push(x);
-            println!("{:?}",x;)
+            println!("{:?}",x);
         }
     }
     println!("{:?}", out_abs);
