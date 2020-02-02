@@ -9,8 +9,8 @@ use bencher::Bencher;
 use cryptonight::cryptonight;
 
 fn benchmark_print() {
-    let bytes = [1u8; 43];
-    let out = cryptonight(&bytes, bytes.len(), 1);
+    let input = "0100fb8e8ac805899323371bb790db19218afd8db8e3755d8b90f39b3d5506a9abce4fa912244500000000ee8146d49fa93ee724deb57d12cbc6c6f3b924d946127c7a97418f9348828f0f02".as_bytes();
+    let out = cryptonight(&input, input.len(), 1);
     let mut out_abs: Vec<u8> = vec![];
     for x in out {
         if x < 0 {
