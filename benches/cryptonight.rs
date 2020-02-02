@@ -9,7 +9,7 @@ use cryptonight::cryptonight;
 fn benchmark_print() {
     let bytes = [1u8; 43];
     let out = cryptonight(&bytes, bytes.len(), 1);
-    let mut out_abs: Vec<u8> = vec![0u8; 31];
+    let mut out_abs: Vec<u8> = vec![];
     for x in out {
         if x < 0 {
             let x_pos = x + (x*2);
