@@ -63,6 +63,5 @@ benchmark_cryptonight_1k_1,
 benchmark_cryptonight_64k_1,
 benchmark_cryptonight_43_0,
 benchmark_cryptonight_1k_0,
-benchmark_cryptonight_64k_0,
-benchmark_print);
+benchmark_cryptonight_64k_0);
 benchmark_main!(benches);
