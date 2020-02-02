@@ -28,8 +28,8 @@ use libc::{c_char, c_void};
 
 #[link(name = "cryptonight")]
 extern "C" {
-    fn cn_slow_hash(data: *const c_void, length: usize, hash: *const c_char, variant: i32, pre_hashed: i32) -> c_void;
-    fn set_params(m: u64, i: u64) -> c_void;
+    pub fn cn_slow_hash(data: *const c_void, length: usize, hash: *const c_char, variant: i32, pre_hashed: i32) -> c_void;
+    pub fn set_params(m: u64, i: u64) -> c_void;
 }
 
 /// Computes the hash of <data> (which consists of <size> bytes), returning the hash (32 bytes).
