@@ -88,7 +88,9 @@ mod tests {
     fn test_hash(tests: &[Test]) {
         for t in tests {
             let out = cryptonight(&t.input[..], t.input.len(), t.variant);
-            println!("{}",out);
+            for x in out {
+              println!("{}",x);
+            }
         }
     }
 
