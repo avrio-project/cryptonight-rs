@@ -20,7 +20,7 @@ fn benchmark_print() {
             println!("{:?}",x);
         }
     }
-    let out_string: String = str::from_utf8(&out_abs).unwrap().to_string();
+    let out_string: String = str::from_utf8(&out_abs).unwrap_or_else(|_| "INVALID".to_owned()).to_string();
     println!("{}", out_string)
 }
 fn benchmark_cryptonight_43_1(bench: &mut Bencher){
