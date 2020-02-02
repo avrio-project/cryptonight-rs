@@ -15,16 +15,16 @@ fn benchmark_print() {
         if x < 0 {
             let x_pos = x + (x*2);
             out_abs.push(x_pos);
-            println!("{:?}",x_pos)
+            println!("{:?}",x_pos.to_hex())
         }else {
             out_abs.push(x);
-            println!("{:?}",x);
+            println!("{:?}",x.to_hex());
         }
     }
     println!("{:?}", out_abs);
-    let s = out_abs.to_hex();
+    //let s = out_abs.to_hex();
 
-    println!("result: {}", s);
+    //println!("result: {}", s);
 }
 fn benchmark_cryptonight_43_1(bench: &mut Bencher){
     benchmark_print();
