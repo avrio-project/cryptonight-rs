@@ -10,7 +10,7 @@ fn benchmark_print() {
     let out = cryptonight(&bytes, bytes.len(), 1);
     let out_raw: u64 = 0;
     for x in out {
-        out_raw = out_raw + x;
+        out_raw = out_raw + x as u64;
     }
     let out_string = to_str(out_raw);
     println!("{}", out_string);
