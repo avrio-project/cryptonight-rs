@@ -21,10 +21,7 @@ fn benchmark_print() {
         }
     }
     println!("{:?}", out_abs);
-    let s = match str::from_utf8(&out_abs) {
-        Ok(v) => v,
-        Err(e) => panic!("Invalid UTF-8 sequence: {}", e),
-    };
+    let s = hex::encode(&out_abs)
 
     println!("result: {}", s);
 }
