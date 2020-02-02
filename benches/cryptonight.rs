@@ -9,10 +9,10 @@ use cryptonight::cryptonight;
 fn benchmark_print() {
     let bytes = [1u8; 43];
     let out = cryptonight(&bytes, bytes.len(), 1);
-    let mut out_abs: Vec<i8> = vec![0i8; 32];
+    let mut out_abs: Vec<u8> = vec![0i8; 32];
     for x in out {
         if x < 0 {
-            x * -1 
+            x = x * -1;
         }
         out_abs.push(x);
     let out_string: String = str::from_utf8(&out_abs).to_string();
