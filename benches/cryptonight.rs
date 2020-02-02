@@ -1,3 +1,4 @@
+use std::str;
 #[macro_use]
 
 extern crate bencher;
@@ -9,7 +10,7 @@ fn benchmark_print() {
     let bytes = [1u8; 43];
     let out = cryptonight(&bytes, bytes.len(), 1);
     let mut out_raw: u64 = 0;
-    let out_string: String = from_utf8(out);
+    let out_string: String = str::from_utf8(&out).unwrap();
     println!("{}", out_string)
 }
 
