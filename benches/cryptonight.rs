@@ -21,7 +21,7 @@ fn benchmark_print() {
         }
     }
     println!("{:?}", out_abs);
-    let s = hex::encode(&out_abs)
+    let s = hex::encode(&out_abs);
 
     println!("result: {}", s);
 }
