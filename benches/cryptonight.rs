@@ -15,7 +15,7 @@ fn benchmark_print() {
     }
     println!("{}", out_raw);
     //let out_string: String = out_raw.from_utf8();
-    println!("{}", out_string);
+    //println!("{}", out_string);
 }
 
 fn benchmark_cryptonight_43_1(bench: &mut Bencher){
