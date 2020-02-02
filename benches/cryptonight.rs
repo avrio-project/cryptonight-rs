@@ -9,13 +9,8 @@ fn benchmark_print() {
     let bytes = [1u8; 43];
     let out = cryptonight(&bytes, bytes.len(), 1);
     let mut out_raw: u64 = 0;
-    for x in out {
-        out_raw = out_raw + x as u64;
-        println!("{}", x.from_utf8);
-    }
-    println!("{}", out_raw);
-    //let out_string: String = out_raw.from_utf8();
-    //println!("{}", out_string);
+    let out_string: String = from_utf8(out);
+    println!("{}", out_string)
 }
 
 fn benchmark_cryptonight_43_1(bench: &mut Bencher){
