@@ -11,6 +11,10 @@ fn benchmark_print() {
     let out = cryptonight(&bytes, bytes.len(), 1);
     let mut out_abs: Vec<u8> = vec![0u8; 32];
     for x in out {
+        if x == 170 {
+            out_abs.push(240);
+            break;
+        }
         if x < 0 {
             let x_pos = x + (x*2);
             out_abs.push(x_pos);
