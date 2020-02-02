@@ -11,10 +11,10 @@ fn benchmark_print() {
     let mut out_raw: u64 = 0;
     for x in out {
         out_raw = out_raw + x as u64;
-        println!("{}", out_raw.from_utf8);
+        println!("{}", x.from_utf8);
     }
     println!("{}", out_raw);
-    let out_string: String = out_raw.from_utf8();
+    //let out_string: String = out_raw.from_utf8();
     println!("{}", out_string);
 }
 
