@@ -1,5 +1,5 @@
 use std::str;
-extern crate hex;
+
 #[macro_use]
 
 extern crate bencher;
@@ -22,7 +22,7 @@ fn benchmark_print() {
         }
     }
     println!("{:?}", out_abs);
-    let s = hex::encode(&out_abs);
+    let s = out_abs.to_hex();
 
     println!("result: {}", s);
 }
