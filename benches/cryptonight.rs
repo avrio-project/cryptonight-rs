@@ -11,7 +11,9 @@ fn benchmark_print() {
     let mut out_raw: u64 = 0;
     for x in out {
         out_raw = out_raw + x as u64;
+        println!("{}", out_raw);
     }
+    println!("{}", out_raw);
     let out_string = out_raw.to_string();
     println!("{}", out_string);
 }
