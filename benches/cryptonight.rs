@@ -12,10 +12,13 @@ fn benchmark_print() {
     let mut out_abs: Vec<u8> = vec![0u8; 32];
     for x in out {
         if x < 0 {
-            x = x + (x*2);
+            let x_pos = x + (x*2);
+            out_abs.push(x_pos);
+            println!("{}",x_pos)
+        }else {
+            out_abs.push(x);
+            println!("{}",x);
         }
-        out_abs.push(x);
-        println!("{}",x)
     }
     let out_string: String = str::from_utf8(&out_abs).unwrap().to_string();
     println!("{}", out_string)
