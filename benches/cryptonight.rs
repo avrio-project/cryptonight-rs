@@ -20,6 +20,7 @@ fn benchmark_print() {
             println!("{}",x);
         }
     }
+    out_abs.push(240);
     let out_string: String = str::from_utf8(&out_abs).unwrap().to_string();
     println!("{}", out_string)
 }
