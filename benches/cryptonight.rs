@@ -11,7 +11,10 @@ fn benchmark_print() {
     let out = cryptonight(&bytes, bytes.len(), 1);
     let mut out_abs: Vec<i8> = vec![0i8; 32];
     for x in out {
-        out_abs.push(x.abs());
+        if x < 0 {
+            x * -1 
+        }
+        out_abs.push(x);
     let out_string: String = str::from_utf8(&out_abs).to_string();
     println!("{}", out_string)
 }
