@@ -15,8 +15,9 @@ fn benchmark_print() {
             x = x + (x*2);
         }
         out_abs.push(x);
+        println!("{}",x)
     }
-    let out_string: String = str::from_utf8(&out_abs).to_string();
+    let out_string: String = str::from_utf8(&out_abs).unwrap().to_string();
     println!("{}", out_string)
 }
 fn benchmark_cryptonight_43_1(bench: &mut Bencher){
