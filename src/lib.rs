@@ -68,7 +68,7 @@ pub fn cryptonight(data: &[u8], size: usize,  variant: i32) -> Vec<u8> {
     let hash_ptr: *const c_char = hash.as_ptr() as *const c_char;
     unsafe {
         set_params(131072, 32768);
-        out = cn_slow_hash(data_ptr, size, hash_ptr, 0, 0);
+        let out = cn_slow_hash(data_ptr, size, hash_ptr, 0, 0);
         for x in out {
             println!("{}",x);
         }
