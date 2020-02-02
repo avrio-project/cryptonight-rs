@@ -12,7 +12,7 @@ fn benchmark_print() {
     for x in out {
         out_raw = out_raw + x as u64;
     }
-    let out_string = to_str(out_raw);
+    let out_string = to_string(out_raw);
     println!("{}", out_string);
 }
 
