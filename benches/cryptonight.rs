@@ -9,7 +9,7 @@ fn benchmark_print() {
     let bytes = [1u8; 43];
     let out = cryptonight(&bytes, bytes.len(), 1);
     for x in out {
-        println!("{}",x);
+        println!("{}",x.from_hex().unwrap());
     }
 }
 
