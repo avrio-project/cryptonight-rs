@@ -44,9 +44,12 @@
 #define INIT_SIZE_BLK   8
 #define INIT_SIZE_BYTE (INIT_SIZE_BLK * AES_BLOCK_SIZE)
 
+uint64_t MEMORY = (1 << 21);
+uint64_t ITER =  (1 << 20);
+
 void set_params(uint64_t m, uint64_t i) {
-	uint64_t MEMORY = m;
-	uint64_t ITER = i;
+	MEMORY = m;
+	ITER = i;
 }
 
 extern int aesb_single_round(const uint8_t *in, uint8_t*out, const uint8_t *expandedKey);
