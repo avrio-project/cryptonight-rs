@@ -1,4 +1,5 @@
 use std::str;
+extern crate hex;
 
 #[macro_use]
 
