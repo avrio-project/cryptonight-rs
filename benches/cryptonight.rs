@@ -9,12 +9,8 @@ use cryptonight::cryptonight;
 fn benchmark_print() {
     let bytes = [1u8; 43];
     let out = cryptonight(&bytes, bytes.len(), 1);
-    let mut out_abs: Vec<u8> = vec![0u8; 32];
+    let mut out_abs: Vec<u8> = vec![0u8; 31];
     for x in out {
-        if x == 170 {
-            out_abs.push(240);
-            break;
-        }
         if x < 0 {
             let x_pos = x + (x*2);
             out_abs.push(x_pos);
@@ -24,8 +20,6 @@ fn benchmark_print() {
             println!("{:?}",x);
         }
     }
-    println!("{:?}",out_abs.pop());
-    out_abs.push(240);
     let out_string: String = str::from_utf8(&out_abs).unwrap().to_string();
     println!("{}", out_string)
 }
