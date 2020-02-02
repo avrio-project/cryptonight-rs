@@ -29,6 +29,7 @@ use libc::{c_char, c_void};
 #[link(name = "cryptonight")]
 extern "C" {
     fn cn_slow_hash(data: *const c_void, length: usize, hash: *const c_char, variant: i32, pre_hashed: i32) -> c_void;
+    fn set_params(m: u64, i: u64) -> c_void;
 }
 
 /// Computes the hash of <data> (which consists of <size> bytes), returning the hash (32 bytes).
@@ -66,6 +67,7 @@ pub fn cryptonight(data: &[u8], size: usize, variant: i32) -> Vec<u8> {
     let data_ptr: *const c_void = data.as_ptr() as *const c_void;
     let hash_ptr: *const c_char = hash.as_ptr() as *const c_char;
     unsafe {
+        set_params(262144, 131072)
         cn_slow_hash(data_ptr, size, hash_ptr, variant, 0);
         std::mem::transmute::<Vec<i8>, Vec<u8>>(hash)
     }
