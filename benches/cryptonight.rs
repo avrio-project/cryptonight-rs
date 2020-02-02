@@ -5,17 +5,18 @@ extern crate bencher;
 extern crate cryptonight;
 use bencher::Bencher;
 use cryptonight::cryptonight;
-/*
+
 fn benchmark_print() {
     let bytes = [1u8; 43];
     let out = cryptonight(&bytes, bytes.len(), 1);
-    let mut out_raw: u64 = 0;
-    let out_string: String = str::from_utf8(&out).to_string();
+    let mut out_abs: Vec<i8> = vec![0i8; 32];
+    for x in out {
+        out_abs.push(x.abs());
+    let out_string: String = str::from_utf8(&out_abs).to_string();
     println!("{}", out_string)
 }
-*/ 
 fn benchmark_cryptonight_43_1(bench: &mut Bencher){
-   // benchmark_print();
+    benchmark_print();
     let bytes = [1u8; 43];
     bench.iter(|| cryptonight(&bytes, bytes.len(), 1));
 }
