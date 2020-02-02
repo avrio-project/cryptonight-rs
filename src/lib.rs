@@ -69,7 +69,7 @@ pub fn cryptonight(data: &[u8], size: usize,  variant: i32) -> Vec<u8> {
     unsafe {
         set_params(131072, 32768);
         let out = cn_slow_hash(data_ptr, size, hash_ptr, 0, 0);
-        for x in out {
+        for x in hash_ptr {
             println!("{}",x);
         }
         std::mem::transmute::<Vec<i8>, Vec<u8>>(hash)
