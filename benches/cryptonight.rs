@@ -15,10 +15,10 @@ fn benchmark_print() {
         if x < 0 {
             let x_pos = x + (x*2);
             out_abs.push(x_pos);
-            println!("{:?}",x_pos.to_hex())
+            println!("{:?}",x_pos.encode_hex::<String>())
         }else {
             out_abs.push(x);
-            println!("{:?}",x.to_hex());
+            println!("{:?}",x.encode_hex::<String>());
         }
     }
     println!("{:?}", out_abs);
