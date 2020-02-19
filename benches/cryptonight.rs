@@ -9,12 +9,12 @@ use bencher::Bencher;
 use cryptonight::cryptonight;
 
 fn benchmark_print() {
-    let input = "0100fb8e8ac805899323371bb790db19218afd8db8e3755d8b90f39b3d5506a9abce4fa912244500000000ee8146d49fa93ee724deb57d12cbc6c6f3b924d946127c7a97418f9348828f0f02".as_bytes();
+    const INPUT_DATA: String = "0100fb8e8ac805899323371bb790db19218afd8db8e3755d8b90f39b3d5506a9abce4fa912244500000000e"
+                               "e8146d49fa93ee724deb57d12cbc6c6f3b924d946127c7a97418f9348828f0f02";
     cryptonight::set_params(65536, 32768);
-    let out = cryptonight(&input, input.len(), 0);
-    println!("{:?}", out);
+    let out = cryptonight(&INPUT_DATA.as_bytes(), INPUT_DATA.as_bytes().len(), 0);
     let s = hex::encode(out);
-
+    println!("INPUT_DATA: {}", INPUT_DATA);
     println!("result: {}", s);
 }
 fn benchmark_cryptonight_43_1(bench: &mut Bencher){
