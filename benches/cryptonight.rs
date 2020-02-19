@@ -19,6 +19,7 @@ fn benchmark_print() {
     println!("result: {}", s);
 }
 fn benchmark_cryptonight_43_1(bench: &mut Bencher){
+    benchmark_print()
     let bytes = [1u8; 43];
     bench.iter(|| cryptonight(&bytes, bytes.len(), 1));
 }
@@ -49,10 +50,10 @@ fn benchmark_cryptonight_64k_0(bench: &mut Bencher){
 }
 
 benchmark_group!(benches, 
-benchmark_cryptonight_43_1, 
-benchmark_cryptonight_1k_1, 
+benchmark_cryptonight_43_1 
+/*benchmark_cryptonight_1k_1, 
 benchmark_cryptonight_64k_1,
 benchmark_cryptonight_43_0,
 benchmark_cryptonight_1k_0,
-benchmark_cryptonight_64k_0);
+benchmark_cryptonight_64k_0*/);
 benchmark_main!(benches);
