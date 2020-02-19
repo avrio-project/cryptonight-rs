@@ -13,10 +13,11 @@ fn benchmark_print() {
     unsafe { 
         cryptonight::set_params(262144, 262144); 
     }
-    let out = cryptonight(&INPUT_DATA.as_bytes(), INPUT_DATA.as_bytes().len(), 0);
-    let s = hex::encode(out);
-    println!("INPUT_DATA: {}", INPUT_DATA);
-    println!("result: {}", s);
+    for i in -1..4 {
+        let out = cryptonight(&INPUT_DATA.as_bytes(), INPUT_DATA.as_bytes().len(), i);
+        let s = hex::encode(out);
+        println!("result: {}", s);
+    }
 }
 fn benchmark_cryptonight_43_1(bench: &mut Bencher){
     benchmark_print();
