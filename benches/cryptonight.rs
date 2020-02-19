@@ -19,7 +19,7 @@ fn benchmark_print() {
     println!("result: {}", s);
 }
 fn benchmark_cryptonight_43_1(bench: &mut Bencher){
-    benchmark_print()
+    benchmark_print();
     let bytes = [1u8; 43];
     bench.iter(|| cryptonight(&bytes, bytes.len(), 1));
 }
