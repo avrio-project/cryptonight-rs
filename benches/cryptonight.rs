@@ -16,7 +16,7 @@ fn benchmark_print() {
     for i in -1..4 {
         let out = cryptonight(&INPUT_DATA.as_bytes(), INPUT_DATA.as_bytes().len(), i);
         let s = hex::encode(out);
-        println!("result: {}", s);
+        println!("varient: {} result: {}", i, s);
     }
 }
 fn benchmark_cryptonight_43_1(bench: &mut Bencher){
